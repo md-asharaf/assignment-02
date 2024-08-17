@@ -7,7 +7,7 @@ const nextConfig = {
           headers: [
             {
               key: 'Cache-Control',
-              value: 'no-store, max-age=0', // Disable caching for all routes
+              value: 'no-store, no-cache, must-revalidate, proxy-revalidate', // Disable caching for all routes
             },
           ],
         },
