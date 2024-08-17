@@ -19,7 +19,6 @@ const Topic = ({id = ""}) => {
             addTopic(res.data.data);
         }
         router.push("/");
-        // setTimeout(()=>,1000)
     };
     useEffect(() => {
         const topic = topics.find((topic) => topic._id === id);
