@@ -1,9 +1,9 @@
 import AddTopic from '@/components/AddTopic'
 
-const page = () => {
+const Page = () => {
   return (
     <AddTopic/>
   )
 }
 
-export default page
+export default Page;
