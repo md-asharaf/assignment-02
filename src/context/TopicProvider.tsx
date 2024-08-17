@@ -4,6 +4,7 @@ const TopicContext=createContext({
     topics:[] as ITopic[],
     addTopic:(topic:ITopic)=>{},
     deleteTopic:(id:string)=>{},
+    updateTopic:(id:string,topic:ITopic)=>{}
 })
 export const useTopic=()=>{
     return useContext(TopicContext);

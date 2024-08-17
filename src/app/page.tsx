@@ -16,17 +16,17 @@ const Home = () => {
     return (
         <div className="flex flex-col gap-y-2 text-black">
             {topics?.map((topic) => (
-                <div key={topic._id} className="flex justify-between items-center px-4 border-black border-[1px] rounded-lg py-4">
+                <div key={topic?._id} className="flex justify-between items-center px-4 border-black border-[1px] rounded-lg py-4">
                     <div className="flex flex-col">
-                        <h3 className="text-2xl font-bold">{topic.title}</h3>
-                        <p>{topic.description}</p>
+                        <h3 className="text-2xl font-bold">{topic?.title}</h3>
+                        <p>{topic?.description}</p>
                     </div>
                     <div className="flex space-x-4">
                         <button>
                             <img src={EditIcon.src} onClick={()=>router.push(`/${topic._id}/edit-topic`)} className="w-10 h-10" />
                         </button>
                         <button>
-                            <img src={DeleteIcon.src} onClick={()=>handleDelete(topic._id)} className="w-10 h-10" />
+                            <img src={DeleteIcon.src} onClick={()=>handleDelete(topic?._id)} className="w-10 h-10" />
                         </button>
                     </div>
                 </div>

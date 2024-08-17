@@ -1,8 +1,8 @@
-import AddTopic from '@/components/AddTopic'
+import Topic from '@/components/Topic'
 
 const Page = () => {
   return (
-    <AddTopic/>
+    <Topic/>
   )
 }
 

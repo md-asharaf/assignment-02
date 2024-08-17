@@ -1,11 +1,11 @@
 "use client";
-import AddTopic from '@/components/AddTopic';
+import Topic from '@/components/Topic';
 import { useParams } from 'next/navigation';
 
 const EditTopic = () => {
     const {topicId} = useParams();
   return (
-    <AddTopic id={topicId as string}/>
+    <Topic id={topicId as string}/>
   )
 }
 

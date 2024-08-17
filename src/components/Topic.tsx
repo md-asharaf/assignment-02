@@ -4,15 +4,22 @@ import axios from "axios";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
-const AddTopic = ({id = ""}) => {
+const Topic = ({id = ""}) => {
     const router = useRouter();
-    const { addTopic, topics } = useTopic();
+    const { addTopic, topics,updateTopic } = useTopic();
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
     const onClick = async () => {
-        const res = await axios.post("/api/add-topic", { title, description });
-        addTopic(res.data.data);
+        let res;
+        if(id){
+            res=await axios.post('/api/update-topic',{id,title,description});
+            updateTopic(id,res.data.data);
+        }else{
+            res = await axios.post("/api/add-topic", { title, description });
+            addTopic(res.data.data);
+        }
         router.push("/");
+        // setTimeout(()=>,1000)
     };
     useEffect(() => {
         const topic = topics.find((topic) => topic._id === id);
@@ -49,4 +56,4 @@ const AddTopic = ({id = ""}) => {
     );
 };
 
-export default AddTopic;
+export default Topic;
